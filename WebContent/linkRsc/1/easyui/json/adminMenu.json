@@ -1,0 +1,19 @@
+[
+{"text":"人员管理","iconCls":"icon-save","children":[
+    {"text":"教师管理"},
+    {"text":"学生管理"}
+    ]},
+{"text":"机构管理","iconCls":"icon-save","children":[
+{"text":"学院管理"},
+{"text":"班级管理"},
+{"text":"课程管理"},
+{"text":"课堂管理"}
+]},
+{"text":"系统设定","iconCls":"icon-save","children":[
+{"text":"选课设定"}
+]},
+{"text":"个人设置","iconCls":"icon-save","children":[
+{"text":"个人信息","attributes":{"href":"personalInfoAction"}},
+{"text":"修改密码"}
+]}
+]  

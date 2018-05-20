@@ -1,0 +1,12 @@
+#DIV-bigest{
+	width:1000px;
+	margin:0 auto;
+	text-align:center;
+	background-color:red;
+	min-height:350px;
+}
+
+#testid{
+	width:800px;
+	height:200px;
+}

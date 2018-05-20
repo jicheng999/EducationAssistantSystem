@@ -1,0 +1,28 @@
+#imgbox{
+	background-image:url(../images/welcome.png);
+	background-repeat: no-repeat;
+	width:1000px;
+	height:438px;
+	margin: auto;  
+    position: absolute;  
+    top: 0; left: 0; bottom: 0; right: 0; 
+	}
+	
+#imgbox #buttonLogin{
+	height:60px;
+	margin-top:370px;
+}
+
+#button{
+	float:right;
+	height:60px;
+	width:148px;
+	background-color:transparent;
+	overflow:visible;
+	padding:0;
+	border:0;
+	background-image:url(../images/login-button-normal.png);
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <!--  <constant name="struts.convention.result.path" value="/WEB-INF/views"/> -->
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="easDefaultPackge" namespace="/" extends="struts-default"><!-- struts-default, -->
+	
+	   <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+	
+	    <interceptors>
+			<interceptor name="loginValidate" class="com.ljc.eas.common.intercepter.LoginValidate"/>
+			<interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+		</interceptors>
+			
+		<global-results>
+			<result name="no_access" type="dispatcher">/WEB-INF/views/jsp/noAccess.jsp</result>
+		</global-results>
+	</package>
+
+	<!-- <package name="action"  extends="easDefaultPackge">
+	
+		<action name="securityCodeImageAction" class="com.ljc.eas.common.action.SecurityCodeImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">imageStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		
+		<action name="loginAction" class="com.ljc.eas.common.action.LoginAction">
+			<result name="success" type="dispatcher">/WEB-INF/views/jsp/login.jsp</result>
+		</action>
+
+		<action name="">
+			<result>.</result>
+		</action>
+		
+	</package> -->
+
+	<!-- <package name="adminAction" extends="easDefaultPackge">
+		<interceptors>
+			<interceptor-stack name="adminInterStack">
+			  <interceptor-ref name="loginValidate">
+			  <param name="role">admin</param>
+			  </interceptor-ref>
+			  <interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="adminInterStack"/>
+		
+		<action name="adminAction" class="com.ljc.eas.admin.action.AdminAction">
+			<result>views/jsp/admin/adminWelcome.jsp</result>
+			<result name="success" type="dispatcher">
+				<param name="location">/WEB-INF/views/jsp/admin/${url}.jsp</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="studentAction" extends="easDefaultPackge">
+		<interceptors>
+			<interceptor-stack name="studentInterStack">
+			  <interceptor-ref name="loginValidate">
+			  <param name="role">student</param>
+			  </interceptor-ref>
+			  <interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="studentInterStack"/>
+		
+		<action name="studentAction" class="com.ljc.eas.student.action.StudentAction">
+			<result>views/jsp/admin/adminWelcome.jsp</result>
+			<result name="success" type="dispatcher">
+				<param name="location">/WEB-INF/views/jsp/student/${url}.jsp</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="teacherAction" extends="easDefaultPackge">
+		<interceptors>
+			<interceptor-stack name="teacherInterStack">
+			  <interceptor-ref name="loginValidate">
+			  <param name="role">teacher</param>
+			  </interceptor-ref>
+			  <interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="teacherInterStack"/>
+		
+		<action name="teacherAction" class="com.ljc.eas.teacher.action.TeacherAction">
+			<result>views/jsp/admin/adminWelcome.jsp</result>
+			<result name="success" type="dispatcher">
+				<param name="location">/WEB-INF/views/jsp/teacher/${url}.jsp</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="ajax" extends="json-default">
+		<action name="ajaxLoginAction" class="com.ljc.eas.common.action.AjaxLoginAction">
+			<result name="error" type="json">
+				<param name="root">result</param>
+			</result>
+			<result name="success" type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package> -->
+
+</struts>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+   <context:component-scan base-package="com.ljc.eas"/>
+
+    <bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<!-- <value>classpath:jdbc.properties</value> -->
+			<value>classpath:prop/jdbc.properties</value>
+		</property>
+	</bean>
+	
+	  <bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+	<!-- 	<property name="annotatedClasses">
+			<list>
+				<value>pojo.Admin</value>
+			</list>
+		</property> -->
+		<property name="mappingResources">
+		  <list>
+		      <value>hibernate/admin.hbm.xml</value>
+		      <value>hibernate/teacher.hbm.xml</value>
+		      <value>hibernate/student.hbm.xml</value>
+		      <value>hibernate/college.hbm.xml</value>
+		      <value>hibernate/class.hbm.xml</value>
+		      <value>hibernate/specialty.hbm.xml</value>
+		  </list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop> 
+				<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop> 
+			</props>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- <bean id="AdminDaoImpl" class="com.ljc.eas.admin.dao.impl.AdminDaoImpl">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="TeacherDaoImpl" class="com.ljc.eas.teacher.dao.impl.TeacherDaoImpl">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="StudentDaoImpl" class="com.ljc.eas.student.dao.impl.StudentDaoImpl">
+	    <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="AdminServiceImpl" class="com.ljc.eas.admin.service.impl.AdminServiceImpl">
+	    <property name="adminDao" ref="AdminDaoImpl"/>
+	</bean>
+	
+	<bean id="TeacherServiceImpl" class="com.ljc.eas.teacher.service.impl.TeacherServiceImpl">
+	    <property name="teacherDao" ref="TeacherDaoImpl"/>
+	</bean>
+	
+	<bean id="StudentServiceImpl" class="com.ljc.eas.student.service.impl.StudentServiceImpl">
+	    <property name="studentDao" ref="StudentDaoImpl"/>
+	</bean>
+	
+	<bean id="securityCodeImageAction" class="com.ljc.eas.common.action.SecurityCodeImageAction"
+		scope="prototype">
+	</bean>
+
+	<bean id="ajaxLoginAction" class="com.ljc.eas.common.action.AjaxLoginAction"
+		scope="prototype">
+		<property name="as" ref="AdminServiceImpl"/>
+		<property name="ts" ref="TeacherServiceImpl"/>
+		<property name="ss" ref="StudentServiceImpl"/>
+	</bean>
+	
+	<bean id="loginAction" class="com.ljc.eas.common.action.LoginAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="adminAction" class="com.ljc.eas.admin.action.AdminAction" scope="prototype">
+	
+	</bean>
+	
+	<bean id="teacherAction" class="com.ljc.eas.student.action.TeacherAction" scope="prototype">
+	
+	</bean>
+	
+	<bean id="studentAction" class="com.ljc.eas.teacher.action.StudentAction" scope="prototype">
+	
+	</bean> -->
+	
+	
+	
+</beans>
+

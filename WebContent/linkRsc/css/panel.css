@@ -1,0 +1,90 @@
+ul{
+	margin:0; 
+	padding:0;
+}
+
+#header{
+	height:110px;
+	background-image:url(../images/systemNameLogo.png);
+	background-repeat:no-repeat;
+	background-position:0px 40px;
+}
+
+#menu{
+	width:1000px;
+	height:44px;
+    border-radius: 20px;
+	background-image:url(../images/menu/bg.png);
+	background-repeat:no-repeat;
+}
+
+.menuButton{
+	width:150px;
+	height:35px;
+	float:left;
+	line-height:35px;
+	font-size:20px;
+	background-color:#3f506a;
+	border-radius:20px;
+	overflow:hidden;
+}
+
+#menu > ul {
+    position:absolute;
+}
+
+#menu > ul > li {
+	float:left;
+	list-style-type:none;
+	width:150px;
+	height:35px;
+	margin-left:10px;
+	margin-top:5px;
+	overflow:hidden;
+}
+
+#menu > ul > li:hover {
+	height:auto;
+}
+
+.list{
+	width:150px;
+	margin-top:40px;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+	background-color:#0071e1;
+}
+
+.list li{
+   height:40px;
+   line-height:40px;
+   list-style-type:none;
+}
+
+.list li:hover{
+	background-color:#ed5434;
+}
+
+#menu a{
+	display:block;
+	text-decoration:none;
+	color:white;
+}
+
+#menu a:hover{
+	color:#80ffff;
+}
+
+#workspace{
+	background-color:#ffffff;
+	min-height:600px;
+	width:1000px;
+	margin-top:10px;
+}
+
+#workspaceFrame {
+	min-height:600px;
+	width:1000px;
+	border:none;
+	background-color: red;
+}

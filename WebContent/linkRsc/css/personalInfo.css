@@ -1,0 +1,57 @@
+.info-dev {
+	height: 350px;
+	margin:10px 5px 10px 5px;
+	float:left;
+}
+
+#info-left {
+		width: 238px;
+}
+
+#info-right {
+		width: 438px;
+}
+
+#imgDiv{
+		margin:15px auto;
+		width:150px;
+}
+
+#photo{
+	width:150px;
+	height:200px;
+}
+
+#imgButton{
+	margin:20px 0 0 53px;
+}
+
+#infoTable{
+	width:438px;
+	height:350px;
+   border:3px solid #e2fdfe; 
+}
+
+#infoTable tr td:nth-child(1){
+	background-color:#9fcfff;
+/* 	color:字体颜色; */
+	font-size:20px;
+	font-family:楷体;
+	text-align:center;
+	width:150px;
+}
+
+#infoTable tr td:nth-child(2){
+	background-color:#eaf4ff;
+/* 	color:字体颜色; */
+	font-size:20px;
+	font-family:楷体;
+	text-align:center;
+}
+
+#toolbar{
+	text-align:right;
+	width:100%;
+	height:auto;
+	background-color: #eaf4ff;
+}

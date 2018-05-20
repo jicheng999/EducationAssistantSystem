@@ -1,0 +1,12 @@
+[{    
+    "id":1,    
+    "text":"人员管理",    
+    "iconCls":"icon-save",    
+    "children":[{    
+        "text":"教师管理",    
+        "checked":true   
+    },{    
+        "text":"学生管理",    
+        "checked":true   
+    }]  
+}]  
